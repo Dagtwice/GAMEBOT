@@ -204,7 +204,7 @@ function computeG(parent, child){ //Cost from the start point to the next point
 		return parent.getG()+10;
 }
 
-function computeH(point, end){ //Estimated cost from the start to end point
+function computeH(point, end){ //Estimated cost from the current point to end point
 	return (Math.abs(point[0]-end[0])+Math.abs(point[1]-end[1]))*10;
 }
 
