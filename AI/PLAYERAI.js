@@ -197,18 +197,18 @@ function genHazards(enemies, enemyArea){
 	return hazards;
 }
 
-function computeG(parent, child){
+function computeG(parent, child){ //Cost from the start point to the next point
 	if(isHazardous(child))
 		return parent.getG()+1000;
 	else
 		return parent.getG()+10;
 }
 
-function computeH(point, end){
+function computeH(point, end){ //Estimated cost from the start to end point
 	return (Math.abs(point[0]-end[0])+Math.abs(point[1]-end[1]))*10;
 }
 
-function computeF(g, h){
+function computeF(g, h){ //Heuristic function of A*
 	return g+h;
 }
 
