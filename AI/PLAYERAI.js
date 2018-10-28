@@ -37,8 +37,7 @@ function THINK(player, enemies, maplayout, end)
 		}
 }
 
-// This function is called before the start of each round. Use it to initialize your
-// bots intelligence!
+// This function is called before the start of each round. 
 function initAI (player,enemies,maplayout,end)
 {
 
@@ -54,12 +53,11 @@ function initAI (player,enemies,maplayout,end)
 		hasMoved = true;
 		currentMove=0;
 }
-
 function Thinking(player, enemies, maplayout, end){
-
+        
         cur = [player.getX(), player.getY()];
         if ((cur[0]!=prev[0]||cur[1]!=prev[1])){
-				
+		
 				var h = computeH(cur,[end.getX(), end.getY()]);
 				var n = new tile(cur, [-1, -1], h, 0, h);
 				path = pathFind(n, [end.getX(), end.getY()], maplayout);
@@ -301,13 +299,13 @@ function genPath(closed, start, end){
 		}
 		prev=closed[i].getParent();
 		if(cur[0]<prev[0])
-			path.push(2);		
+			path.push(2); //move left		
 		else if(cur[0]>prev[0])
-			path.push(3);
+			path.push(3); //move right
 		else if(cur[1]<prev[1])
-			path.push(0);
+			path.push(0); //move up
 		else if(cur[1]>prev[1])
-			path.push(1);
+			path.push(1); //move down
 		
 		cur = prev;
 		if(cur[0]==start[0]&&cur[1]==start[1])
