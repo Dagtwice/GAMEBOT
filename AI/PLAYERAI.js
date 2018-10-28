@@ -212,7 +212,7 @@ function computeF(g, h){ //Heuristic function of A*
 	return g+h;
 }
 
-function arrange(open){
+function arrange(open){ //It sorts the open list with F
 	var temp;
 	
 	for(var i=0; i<open.length-1; i++){
